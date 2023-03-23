@@ -131,30 +131,26 @@ function checaRenovacaoRG() {
   const idade = anoAtual-anoNasci;
   const idadeCI = anoAtual-anoCart;
 
-  let renovacao = false;
-  if (idade <= 20 || idade === 20){
-    if (idadeCI >= 5){
-      renovacao = true;
-    }
-  } else if (idade > 20 && idade <= 50){
-    if (idadeCI >= 10){
-      renovacao = true;
-    }
-  }else( idadeCI >= 15);{
-    renovacao = true;
-  }
-  console.log(renovacao)
-
+  const renovar = idade <= 20 && idadeCI >= 5 ||
+  idade > 20 && idade <= 50 && idadeCI >= 10 || 
+  idade > 50 && idadeCI >= 15
+console.log(renovar);
 }
-
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
-  // implemente sua lógica aqui
+  const bissexto = (ano%4 === 0) && (ano%100!==0)||(ano%400===0)
+  return bissexto;
 
 }
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
+  const idade= prompt('Você tem mais de 18 anos?');
+  const ensinoMedio = prompt('possui ensino médio completo?');
+  const disponibilidade = prompt('possui disponibilidade exclusiva durante os horários do curso?');
+  const resposta = (idade === 'sim' && ensinoMedio  === 'sim' && disponibilidade === 'sim');
+  console.log(resposta) ;
+  
   // implemente sua lógica aqui
 
 }
